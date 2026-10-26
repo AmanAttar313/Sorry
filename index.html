@@ -4,173 +4,313 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sorry Humaira ❤️</title>
+
 <style>
-*{box-sizing:border-box}
-body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#160b18,#3b102d,#681f4b);
-    color:white;
-    overflow:hidden;
+* {
+    box-sizing: border-box;
 }
-.card{
-    width:min(92%,430px);
-    padding:28px 22px;
-    text-align:center;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:25px;
-    background:rgba(255,255,255,.10);
-    backdrop-filter:blur(12px);
-    box-shadow:0 20px 60px rgba(0,0,0,.4);
-    position:relative;
-    z-index:2;
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdde9, #f9c5d1, #e8b4d8);
+    color: #5a1835;
+    overflow-x: hidden;
 }
-.terminal{
-    text-align:left;
-    background:#090909;
-    border-radius:15px;
-    padding:15px;
-    margin-bottom:22px;
-    color:#ffb6d9;
-    font-family:monospace;
-    font-size:13px;
-    line-height:1.7;
+
+.container {
+    width: 92%;
+    max-width: 520px;
+    margin: 30px auto;
+    padding: 28px 20px 35px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(100, 30, 70, 0.25);
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
-h1{font-size:32px;margin:10px 0;color:#ffd6e9}
-p{line-height:1.6;color:#ffeaf3}
-button{
-    border:0;
-    border-radius:50px;
-    padding:14px 28px;
-    margin:8px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.25s;
+
+.heart {
+    font-size: 65px;
+    animation: heartbeat 1.3s infinite;
 }
-#yes{
-    background:#ff4f9a;
-    color:white;
-    box-shadow:0 8px 25px rgba(255,79,154,.35);
-}
-#yes:hover{transform:scale(1.06)}
-#no{
-    background:white;
-    color:#b12d68;
-}
-.hidden{display:none}
-.big-heart{
-    font-size:70px;
-    animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
-    50%{transform:scale(1.15)}
-}
-.heart{
-    position:fixed;
-    bottom:-30px;
-    animation:float 5s linear forwards;
-    pointer-events:none;
-    z-index:1;
-}
-@keyframes float{
-    0%{transform:translateY(0) scale(.8);opacity:0}
-    15%{opacity:1}
-    100%{transform:translateY(-110vh) rotate(25deg);opacity:0}
-}
-.small{font-size:12px;opacity:.75}
-</style>
-</head>
-<body>
 
-<div class="card" id="mainCard">
-    <div class="terminal">
-        &gt; running apology.exe...<br>
-        &gt; searching for Humaira... ❤️<br>
-        &gt; Humaira found!<br>
-        &gt; loading my apology... 100%<br>
-        &gt; <span>ERROR: I accidentally blocked you 😭</span>
-    </div>
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
 
-    <div class="big-heart">❤️</div>
-
-    <h1>I'm Sorry, Humaira 🥺</h1>
-
-    <p>
-        Galti se block ho gaya tha...<br>
-        <b>Jaan-bujhkar nahi kiya tha.</b> ❤️
-    </p>
-
-    <p>
-        Programming mein bhi kabhi-kabhi<br>
-        <b>unexpected error</b> aa jata hai... 😭<br>
-        Aur mujhse bhi ek bada error ho gaya.
-    </p>
-
-    <p><b>Will you forgive me? 🥹❤️</b></p>
-
-    <button id="yes" onclick="forgive()">YES ❤️</button>
-    <button id="no" onclick="noButton()">NO 😤</button>
-
-    <div class="small">Made with ❤️ specially for Humaira</div>
-</div>
-
-<div class="card hidden" id="successCard">
-    <div class="big-heart">💖</div>
-    <h1>Thank You, Humaira! 🥹</h1>
-    <p>
-        Error fixed successfully! ✅
-    </p>
-    <p>
-        <b>Humaira's friendship has been restored ❤️</b>
-    </p>
-    <p>
-        Tumhe accidentally block karna mistake tha,<br>
-        but tumhe khona kabhi option nahi tha. ❤️
-    </p>
-    <p>🤝 Friends? Always. ❤️</p>
-</div>
-
-<script>
-function forgive(){
-    document.getElementById("mainCard").classList.add("hidden");
-    document.getElementById("successCard").classList.remove("hidden");
-
-    for(let i=0;i<45;i++){
-        setTimeout(createHeart,i*60);
+    50% {
+        transform: scale(1.16);
     }
 }
 
-function noButton(){
-    const btn=document.getElementById("no");
-    const messages=[
-        "Ek baar soch lo 🥺",
-        "Please Humaira ❤️",
-        "Galti ho gayi 😭",
-        "Sorry na 🥹",
-        "Last chance? ❤️"
-    ];
-    btn.innerText=messages[Math.floor(Math.random()*messages.length)];
-
-    btn.style.transform=
-        `translate(${Math.random()*100-50}px,${Math.random()*50-25}px)`;
+h1 {
+    color: #d6336c;
+    font-size: 34px;
+    margin: 8px 0 18px;
 }
 
-function createHeart(){
-    const heart=document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML=["❤️","💗","💖","💕","💘"][Math.floor(Math.random()*5)];
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(18+Math.random()*25)+"px";
-    heart.style.animationDuration=(3+Math.random()*3)+"s";
+.message {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 15px 0;
+}
+
+.highlight {
+    color: #d6336c;
+    font-weight: bold;
+}
+
+.shayari {
+    margin: 28px 0;
+    padding: 22px 16px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff0f5, #ffe1ec);
+    border: 1px solid #ffc3d6;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.shayari-title {
+    color: #c2185b;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    background: #e83e8c;
+    color: white;
+    box-shadow: 0 8px 20px rgba(232, 62, 140, 0.3);
+    transition: transform .2s;
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+#answer {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: floatUp 5s linear forwards;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #9a496b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">❤️</div>
+
+    <h1>I'm Sorry Humaira 🥺❤️</h1>
+
+    <div class="message">
+
+        Humaira, mujhse ek galti ho gayi... 🥺
+
+        <br><br>
+
+        Mera <span class="highlight">mobile hang ho gaya tha</span>,
+        isi wajah se galti se tum block ho gayi.
+
+        <br><br>
+
+        <span class="highlight">
+            Maine jaan-bujhkar nahi kiya tha. ❤️
+        </span>
+
+        <br><br>
+
+        Please mujhe maaf kar do Humaira. 🥺
+
+        <br>
+
+        <b>Sorry... really, really sorry. ❤️</b>
+
+    </div>
+
+
+    <div class="shayari">
+
+        <div class="shayari-title">
+            🌹 Tumhare liye 🌹
+        </div>
+
+        Muskan Ka Koi Mol Nhi Hota,<br>
+        Kuch Rishton Ka Tol Nhi Hota,<br><br>
+
+        Dost To Mil Jate Hai Har Raste Par<br>
+
+        Lekin Har Koi Tumhari Tarah<br>
+
+        <span class="highlight">
+            Humaira Anmol Nhi Hota. ❤️
+        </span>
+
+    </div>
+
+
+    <div class="shayari">
+
+        <div class="shayari-title">
+            🌸 Ek aur arz hai... 🌸
+        </div>
+
+        Humaira ki khubsurat tasveer ko dekh kar
+        <br>
+
+        kuch likha hai...
+
+        <br>
+
+        <b>to arz kiya hai... ❤️</b>
+
+        <br><br>
+
+        🌹🌼🌸
+
+        <br>
+
+        <b>
+            Phool podhe se hai, phool se podha nahi... 🪴
+        </b>
+
+        <br><br>
+
+        <b>
+            Samandar se machhli hai,<br>
+            machhli se samandar nahi... 🐠
+        </b>
+
+        <br><br>
+
+        Aapke chehre ki roshni dekh kar
+        <br>
+
+        yahi lag raha hai ki...
+
+        <br><br>
+
+        <span class="highlight">
+
+            Beshak Chand aapse hai...<br>
+
+            Aap Chand se nahi. 🌙❤️
+
+        </span>
+
+    </div>
+
+
+    <div class="message">
+
+        Dosti bahut special hoti hai... ❤️
+
+        <br>
+
+        Aur tum mere liye bahut
+        <b>anmol</b> ho, Humaira. 🥺
+
+    </div>
+
+
+    <button onclick="forgive()">
+        Maaf Kar Do? 🥺❤️
+    </button>
+
+
+    <div id="answer"></div>
+
+
+    <div class="footer">
+        Dil se sorry ❤️
+    </div>
+
+</div>
+
+
+<script>
+
+function forgive() {
+
+    document.getElementById("answer").innerHTML =
+        "Thank You Humaira 🥹❤️<br>Dosti hamesha rahegi 🤝❤️";
+
+    for (let i = 0; i < 50; i++) {
+
+        setTimeout(createHeart, i * 70);
+
+    }
+}
+
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    heart.innerHTML =
+        ["❤️", "💗", "💖", "💕", "🌹", "🌸"]
+        [Math.floor(Math.random() * 6)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (18 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (3 + Math.random() * 3) + "s";
+
     document.body.appendChild(heart);
 
-    setTimeout(()=>heart.remove(),6500);
+    setTimeout(() => heart.remove(), 6500);
 }
+
 </script>
 
 </body>
