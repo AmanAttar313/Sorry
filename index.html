@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Humaira ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#160b18,#3b102d,#681f4b);
+    color:white;
+    overflow:hidden;
+}
+.card{
+    width:min(92%,430px);
+    padding:28px 22px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:25px;
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(12px);
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    position:relative;
+    z-index:2;
+}
+.terminal{
+    text-align:left;
+    background:#090909;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:22px;
+    color:#ffb6d9;
+    font-family:monospace;
+    font-size:13px;
+    line-height:1.7;
+}
+h1{font-size:32px;margin:10px 0;color:#ffd6e9}
+p{line-height:1.6;color:#ffeaf3}
+button{
+    border:0;
+    border-radius:50px;
+    padding:14px 28px;
+    margin:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+#yes{
+    background:#ff4f9a;
+    color:white;
+    box-shadow:0 8px 25px rgba(255,79,154,.35);
+}
+#yes:hover{transform:scale(1.06)}
+#no{
+    background:white;
+    color:#b12d68;
+}
+.hidden{display:none}
+.big-heart{
+    font-size:70px;
+    animation:pulse 1.2s infinite;
+}
+@keyframes pulse{
+    50%{transform:scale(1.15)}
+}
+.heart{
+    position:fixed;
+    bottom:-30px;
+    animation:float 5s linear forwards;
+    pointer-events:none;
+    z-index:1;
+}
+@keyframes float{
+    0%{transform:translateY(0) scale(.8);opacity:0}
+    15%{opacity:1}
+    100%{transform:translateY(-110vh) rotate(25deg);opacity:0}
+}
+.small{font-size:12px;opacity:.75}
+</style>
+</head>
+<body>
+
+<div class="card" id="mainCard">
+    <div class="terminal">
+        &gt; running apology.exe...<br>
+        &gt; searching for Humaira... ❤️<br>
+        &gt; Humaira found!<br>
+        &gt; loading my apology... 100%<br>
+        &gt; <span>ERROR: I accidentally blocked you 😭</span>
+    </div>
+
+    <div class="big-heart">❤️</div>
+
+    <h1>I'm Sorry, Humaira 🥺</h1>
+
+    <p>
+        Galti se block ho gaya tha...<br>
+        <b>Jaan-bujhkar nahi kiya tha.</b> ❤️
+    </p>
+
+    <p>
+        Programming mein bhi kabhi-kabhi<br>
+        <b>unexpected error</b> aa jata hai... 😭<br>
+        Aur mujhse bhi ek bada error ho gaya.
+    </p>
+
+    <p><b>Will you forgive me? 🥹❤️</b></p>
+
+    <button id="yes" onclick="forgive()">YES ❤️</button>
+    <button id="no" onclick="noButton()">NO 😤</button>
+
+    <div class="small">Made with ❤️ specially for Humaira</div>
+</div>
+
+<div class="card hidden" id="successCard">
+    <div class="big-heart">💖</div>
+    <h1>Thank You, Humaira! 🥹</h1>
+    <p>
+        Error fixed successfully! ✅
+    </p>
+    <p>
+        <b>Humaira's friendship has been restored ❤️</b>
+    </p>
+    <p>
+        Tumhe accidentally block karna mistake tha,<br>
+        but tumhe khona kabhi option nahi tha. ❤️
+    </p>
+    <p>🤝 Friends? Always. ❤️</p>
+</div>
+
+<script>
+function forgive(){
+    document.getElementById("mainCard").classList.add("hidden");
+    document.getElementById("successCard").classList.remove("hidden");
+
+    for(let i=0;i<45;i++){
+        setTimeout(createHeart,i*60);
+    }
+}
+
+function noButton(){
+    const btn=document.getElementById("no");
+    const messages=[
+        "Ek baar soch lo 🥺",
+        "Please Humaira ❤️",
+        "Galti ho gayi 😭",
+        "Sorry na 🥹",
+        "Last chance? ❤️"
+    ];
+    btn.innerText=messages[Math.floor(Math.random()*messages.length)];
+
+    btn.style.transform=
+        `translate(${Math.random()*100-50}px,${Math.random()*50-25}px)`;
+}
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML=["❤️","💗","💖","💕","💘"][Math.floor(Math.random()*5)];
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(18+Math.random()*25)+"px";
+    heart.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),6500);
+}
+</script>
+
+</body>
+</html>
